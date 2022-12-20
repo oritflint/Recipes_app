@@ -1,0 +1,16 @@
+
+<div class="recipe-list">
+    <div class="listItem" *ngFor="let item of recipeList; let i = index" >
+        <mat-card (click)="onRecipeItemClick(item, i)"
+        [ngClass]="{selected: item.selected, confirmed: item.isConfirmed}"
+        *ngIf="!item.isArchived">
+            <mat-card-header>
+                <mat-card-title>{{item.title}}</mat-card-title>
+                <mat-card-subtitle>{{item.ingredients}}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+
+        <mat-divider></mat-divider>    
+    </div>
+</div>
+
