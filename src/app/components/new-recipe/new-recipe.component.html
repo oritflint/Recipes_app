@@ -1,0 +1,30 @@
+<form #f="ngForm" (ngSubmit)="onNewRecipeSubmit()">
+
+    <mat-form-field appearance="outline">
+        <mat-label>New recipe</mat-label>
+        <input matInput placeholder="Enter recipe name" ngModel name = "title">
+      </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>img_url</mat-label>
+            <input matInput placeholder="Enter recipe img_url" ngModel name = "img_url">
+          </mat-form-field> 
+          
+      <mat-form-field appearance="outline">
+        <mat-label>duration_time</mat-label>
+        <input matInput placeholder="Enter recipe duration_time" ngModel name = "duration_time">
+      </mat-form-field> 
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Ingredients</mat-label>
+        <input matInput placeholder="Enter recipe Ingredients" ngModel name = "ingredients">
+      </mat-form-field>      
+
+    <mat-form-field appearance="outline">
+        <mat-label>preperation</mat-label>
+        <input matInput placeholder="Enter recipe preperation" ngModel name = "preperation">
+      </mat-form-field> 
+
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+</form>
+

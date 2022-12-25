@@ -1,3 +1,13 @@
+::ng-deep{
+    mat-card{
+        height:calc(100% - 36px);
+    }
+
+    mat-card-actions{
+        margin-bottom:50px;
+    }
+}
+
 .recipe_pic{
     width:200px;
     height:200px;

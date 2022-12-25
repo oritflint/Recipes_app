@@ -1,16 +1,8 @@
 .app{
     main{
-
-        .list-container{
-            width:25%;
-        }
-        
-        .recipe-container{
-            width:75%;
-        }
-
+        width:100%;
         padding: 10px;
-        gap: 10PX;
-        display :flex;
+        height: calc(100vh - 104px);
+
     }    
 }

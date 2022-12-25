@@ -1,5 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 import { IRecipe } from 'src/app/recipe.interface';
 import { RecipeService } from 'src/app/services/recipe.service';
 
@@ -8,21 +7,21 @@ import { RecipeService } from 'src/app/services/recipe.service';
   templateUrl: './recipes-list.component.html',
   styleUrls: ['./recipes-list.component.scss']
 })
-export class RecipesListComponent implements OnInit, OnDestroy {
+export class RecipesListComponent implements OnInit {
 
-  public recipeList: Array<IRecipe> = [];
+  private _recipeList: Array<IRecipe> = [];
 
-  private subscription: Subscription = new Subscription()
+  @Input() set recipeList(recipesList: Array<IRecipe>){
+    this._recipeList = recipesList;
+  }
+
+  get recipeList(){
+    return this._recipeList
+  }
 
   constructor(private _recipeService : RecipeService) { }
 
   ngOnInit(): void {
-    this.subscription.add(
-      this._recipeService.getRecipes().subscribe(data=>{
-        this.recipeList = data
-      })
-    )
-
   }
 
   public onRecipeItemClick(recipe: IRecipe, index: number){
@@ -30,14 +29,9 @@ export class RecipesListComponent implements OnInit, OnDestroy {
         element.selected = false
       });
       recipe.selected = true
-
-      this.subscription.add(    
-        this._recipeService.setSingleRecipe(recipe, index)
-    )
+ 
+      this._recipeService.setSingleRecipe(recipe, index)
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
 
 }

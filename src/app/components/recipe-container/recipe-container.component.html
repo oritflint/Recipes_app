@@ -1,0 +1,13 @@
+<div class="recipe-container">
+    <div class="list-container">
+        <app-recipes-list [recipeList]="recipeList"></app-recipes-list>
+      </div>
+      <div class="recipe-container">
+        <app-recipe [recipe]="recipe"></app-recipe>
+      </div>
+      <div class="add-recipe-button">
+        <button mat-fab color="warn" (click)="openDialog()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+</div>

@@ -8,18 +8,25 @@ import { MaterialModule } from './material/material.module';
 import { HeaderComponent } from './components/header/header.component';
 import { RecipesListComponent } from './components/recipes-list/recipes-list.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
+import { RecipeContainerComponent } from './components/recipe-container/recipe-container.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RecipesListComponent,
-    RecipeComponent
+    RecipeComponent,
+    NewRecipeComponent,
+    RecipeContainerComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    FormsModule,
     MaterialModule,
   ],
   providers: [],

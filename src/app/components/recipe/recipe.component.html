@@ -1,7 +1,6 @@
-<div class="recipe_container">
-<mat-card class="card" *ngIf="recipe">
+
+<mat-card class="card" *ngIf="recipe && !recipe.isArchived">
     <mat-card-header>
-      <div mat-card-avatar class="header-image"></div>
       <mat-card-title>{{recipe.title}}</mat-card-title>
       <mat-card-subtitle>{{recipe.ingredients}}</mat-card-subtitle>
     </mat-card-header>
@@ -21,4 +20,3 @@
       <button mat-raised-button color="primary" (click)="onClickArchive()">ARCHIVE</button>
     </mat-card-actions>
   </mat-card>
-</div>
